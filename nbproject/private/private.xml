@@ -7,7 +7,7 @@
             <file>file:/C:/Users/taisp/formulario/resources/views/listar.blade.php</file>
             <file>file:/C:/Users/taisp/formulario/app/Http/Controllers/FormularioController.php</file>
             <file>file:/C:/Users/taisp/formulario/routes/web.php</file>
-            <file>file:/C:/Users/taisp/formulario/resources/views/search.blade.php</file>
+            <file>file:/C:/Users/taisp/formulario/app/Http/Controllers/EnderecoController.php</file>
         </group>
     </open-files>
 </project-private>

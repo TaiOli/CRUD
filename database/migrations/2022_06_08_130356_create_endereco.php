@@ -11,24 +11,20 @@ return new class extends Migration
      *
      * @return void
      */
-    //Criação da tabela Formulário
+    //Criação da tabela Endereço
     public function up()
     {
-        Schema::create('form', function (Blueprint $table) {
+        Schema::create('endereco', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('cpf');
-            $table->string('email');
-            $table->string('perfil');
-            $table->string('endereco');
-            $table->bigInteger('perfil_id')->unsigned()->nullable();
+            $table->string('outros_enderecos');
+            $table->bigInteger('endereco_id')->unsigned()->nullable();
             $table->timestamps();
             //Foreign Key
-            $table->foreign('perfil_id')
+            $table->foreign('endereco_id')
                     ->references('id')
-                    ->on('perfil')
+                    ->on('form')
                     ->onDelete('cascade');
-        });        
+        });
     }
     /**
      * Reverse the migrations.
@@ -37,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form');
+        Schema::dropIfExists('endereco');
     }
 };

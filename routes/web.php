@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormularioController;
+use App\Http\Controllers\EnderecoController;
 
 /*Rotas*/
 Route::get('/', function () {
@@ -14,7 +15,7 @@ Route::get('/', function () {
 });
 
 /*Rota para adicionar dados a lista*/
-Route::post('/forms',[FormularioController::class,'store']);
+Route::get('/forms',[FormularioController::class,'store']);
 /*Rota para listar dados*/
 Route::get('/listar',[FormularioController::class,'show']);
 /*Rota para excluir item da lista*/
@@ -25,6 +26,15 @@ Route::get('/edit/{id}',[FormularioController::class,'edit'])->name('form.editar
 Route::post('/edit/{id}',[FormularioController::class,'update'])->name('form.atualizar');
 /*Rota para Buscar dados na lista*/
 Route::get('/search',[FormularioController::class,'search']);
+
+
+
+
+
+
+
+
+
 
 
 

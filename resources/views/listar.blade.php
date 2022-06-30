@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     
+    <!-- Menu -->
     <div class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -14,12 +15,10 @@
                     <a class="navbar-brand" href="{{ url('listar') }}">Lista</a>
                 </div>
             </div>
-    </div><!-- comment -->
+    </div>
     
-     
     <div class="container">
-        <div class="row justify-content-center">
-            
+        <div class="row justify-content-center">           
             <div class="col md-12">
                 <div class="card">
                     <div class="card-header">
@@ -52,6 +51,7 @@
                                   <th>Email</th>
                                   <th>Perfil</th>
                                   <th>Endereco</th>
+                                  <th>Outros</th>
                                   <th>Ações</th>
                                 </tr>
                             </thead>
@@ -64,17 +64,26 @@
                                 <td>{{$form->email}}</td>
                                 <td>{{$form->perfil}}</td>
                                 <td>{{$form->endereco}}</td>
+                            
+                                @foreach($enderecos as $end)
+                                
+                                    <td>{{$end->outros_enderecos}}</td>
 
                                 <td>
+                                    @csrf
                                     <!-- Opcões de Editar ou excluir da lista -->
                                    <a href="{{route('form.editar',['id'=>$form->id])}}"
                                       title="Editar Cadastro {{$form->nome}}"><button class="btn btn-success" type="submit">Editar</button></a>
-
+                          
+                                      
                                    <a href="{{route('form.destroy',['id'=>$form->id])}}"
                                       title="Excluir cadastro {{$form->nome}}"><button class="btn btn-danger" type="submit">Excluir</button></a>
-                                </td>
+                                </td> 
                             </tr>
-                            @endforeach
+                                 @endforeach
+                                 
+                            @endforeach  
+                            
                         </tbody>
                         </table>
                     </div>

@@ -8,17 +8,17 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">       
     </head>
     
+    <!-- Menu -->
     <body>
         <div class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{{ url('') }}">Home</a>
-                    <a class="navbar-brand" href="{{ url('listar') }}">Lista</a>
+                    <a class="navbar-brand" href="{{ url('listar') }}">Lista</a> 
                 </div>
             </div>
         </div>
-            
-            
+                     
             <div class="row justify-content-center"> 
                 <div class="col md-12">
                     
@@ -43,8 +43,9 @@
                 </div>
             </div>
         
+          <!-- Inserindo dados a tabela Formulário,Endereco e Perfil e salvando no banco -->
         <div class='container'>
-             <form action="/forms" method="post">
+            <form action="/forms"  method="get">
                     @csrf
                     <br>
                 <div id="formulario">
@@ -63,9 +64,14 @@
                         
                         <label>Endereco:</label>
                         <input type="text"  class="form-control" name="endereco">
-    
+
+                        <label>Outro Endereco:</label>                 
+                        <input type="text"  class="form-control" name="outros_enderecos">
+                        
+                        <label>Senha:</label>                 
+                        <input type="text"  class="form-control" name="senha">
                     </div>
-                </div>
+                </div>       
                         <button class="btn btn-primary">Salvar</button>
         </div> 
     </body>   
